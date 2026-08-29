@@ -60,10 +60,10 @@ module cla4(
   and #(2)(t10,p3,p2,p1,p0,cin);
   or #(2)(c4,g3,t7,t8,t9,t10);
 
-  assign sum[0] = p0 ^ cin;
-  assign sum[1] = p1 ^ c1;
-  assign sum[2] = p2 ^ c2;
-  assign sum[3] = p3 ^ c3;
+  assign #(2)sum[0] = p0 ^ cin;
+  assign #(2)sum[1] = p1 ^ c1;
+  assign #(2)sum[2] = p2 ^ c2;
+  assign #(2)sum[3] = p3 ^ c3;
   assign cout = c4;
   // TODO: your gate-level P/G, carry, and sum logic goes here.
   // (cout should be connected to c4.) Remember the delay on every gate.
