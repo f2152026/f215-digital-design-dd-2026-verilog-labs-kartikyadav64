@@ -16,12 +16,11 @@ module tb;
     .Y  (t_y)
   );
 
-  // Waveform dump configuration
   string vcd_file;
   initial begin
     if ($value$plusargs("vcd=%s", vcd_file)) begin
       $dumpfile(vcd_file);
-      $dumpvars(0, DUT);
+      $dumpvars(0, U1);
     end
   end
 
@@ -54,6 +53,7 @@ module tb;
   end
 
   initial
-    $monitor($time, " I0=%b I1=%b S=%b | Y=%b", t_i0, t_i1, t_s, t_y);
+    $monitor($time, " I0=%b I1=%b S=%b | Y=%b",
+             t_i0, t_i1, t_s, t_y);
 
 endmodule
